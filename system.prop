@@ -55,6 +55,10 @@ persist.vendor.radio.force_on_dc=true
 persist.vendor.radio.ignore_dom_time=10
 ro.telephony.default_network=22,22
 
+# SoC
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SDM845
+
 # Touchscreen
 persist.vendor.qti.inputopts.enable=true
 persist.vendor.qti.inputopts.movetouchslop=0.6
