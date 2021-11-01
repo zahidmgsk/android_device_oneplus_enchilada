@@ -23,7 +23,7 @@ PRODUCT_PRODUCT_PROPERTIES += ro.apex.updatable=false
 endif
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oneplus/sdm845-common/sdm845-common-vendor.mk)
+$(call inherit-product, vendor/oneplus/enchilada/enchilada-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -31,6 +31,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_PACKAGES += \
+    NoCutoutOverlay \
     OdmOverlay-OPSystemUI \
     OdmOverlay-framework-res \
     OnePlusIconShapeCircleOverlay \
@@ -39,6 +40,14 @@ PRODUCT_PACKAGES += \
     OnePlusIconShapeSquircleOverlay \
     OnePlusIconShapeTeardropOverlay \
     TelephonyResCommon
+
+# Device uses high-density artwork where available
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Boot animation
+TARGET_SCREEN_HEIGHT := 2280
+TARGET_SCREEN_WIDTH := 1080
 
 # Properties
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
@@ -166,6 +175,10 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     oneplus-fwk
+
+# Pocket mode
+PRODUCT_PACKAGES += \
+    OnePlusPocketMode
 
 # Power
 PRODUCT_PACKAGES += \
