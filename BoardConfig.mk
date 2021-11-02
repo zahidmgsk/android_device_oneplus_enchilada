@@ -18,8 +18,6 @@ BOARD_VENDOR := oneplus
 
 DEVICE_PATH := device/oneplus/enchilada
 
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
